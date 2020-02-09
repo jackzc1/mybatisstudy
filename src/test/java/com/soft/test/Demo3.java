@@ -92,4 +92,14 @@ public class Demo3 {
             System.out.println(user);
         }
     }
+
+    @Test
+    public void test6() {
+        List<User> list = userDao.findAll1();
+        for (User user : list) {
+            System.out.println(user.getUsername());
+            System.out.println(user.getAccounts());
+            System.out.println("+++++++++++++++++++");
+        }
+    }
 }
