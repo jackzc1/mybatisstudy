@@ -38,4 +38,23 @@
             username like #{username} and sex like #{sex}
         </where>
     </select>
+
+    <select id="findByIds" parameterType="user" resultType="user">
+        <include refid="sql1"></include>
+        <where>
+            <foreach collection="ids" open="id = " separator="or id = " item="i" >
+                #{i}
+            </foreach>
+        </where>
+    </select>
+
+
+    <select id="findByIds1" parameterType="user" resultType="user">
+        <include refid="sql1"></include>
+        <where>
+            <foreach collection="ids" open="id in (" separator="," item="i" close=")">
+                #{i}
+            </foreach>
+        </where>
+    </select>
 </mapper>

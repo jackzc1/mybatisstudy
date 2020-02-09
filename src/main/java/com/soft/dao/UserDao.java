@@ -22,4 +22,10 @@ public interface UserDao {
 
     //根据username和sex查询
     public List<User> findByUsernameAdnSex(User user);
+
+    //测试foreach标签
+    public List<User> findByIds(User user);
+
+    //测试foreach标签 in
+    public List<User> findByIds1(User user);
 }

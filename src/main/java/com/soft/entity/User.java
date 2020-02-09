@@ -14,6 +14,16 @@ public class User implements Serializable{
     private String sex;
     private String address;
 
+    private int[] ids;
+
+    public int[] getIds() {
+        return ids;
+    }
+
+    public void setIds(int[] ids) {
+        this.ids = ids;
+    }
+
     @Override
     public String toString() {
         return "User{" +

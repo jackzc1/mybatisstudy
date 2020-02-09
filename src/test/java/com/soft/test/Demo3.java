@@ -52,4 +52,27 @@ public class Demo3 {
             System.out.println(user1);
         }
     }
+
+
+    @Test
+    public void test2() {
+        User user = new User();
+        int[] ids = {1,2,3};
+        user.setIds(ids);
+        List<User> li = userDao.findByIds(user);
+        for (User user1 : li) {
+            System.out.println(user1);
+        }
+    }
+
+    @Test
+    public void test3() {
+        User user = new User();
+        int[] ids = {1,2,3};
+        user.setIds(ids);
+        List<User> li = userDao.findByIds1(user);
+        for (User user1 : li) {
+            System.out.println(user1);
+        }
+    }
 }
