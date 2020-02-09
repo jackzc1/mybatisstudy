@@ -75,4 +75,12 @@ public class Demo3 {
             System.out.println(user1);
         }
     }
+
+    @Test
+    public void test4() {
+        List<User> list = userDao.findAlls();
+        for (User user : list) {
+            System.out.println(user);
+        }
+    }
 }

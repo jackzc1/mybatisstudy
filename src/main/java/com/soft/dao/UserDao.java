@@ -28,4 +28,7 @@ public interface UserDao {
 
     //测试foreach标签 in
     public List<User> findByIds1(User user);
+
+    //一对多关联查询
+    public List<User> findAlls();
 }

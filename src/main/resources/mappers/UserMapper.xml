@@ -57,4 +57,23 @@
             </foreach>
         </where>
     </select>
+
+    <select id="findAlls" resultMap="result1">
+      SELECT a.*,u.id id1,u.username,u.birthday,u.sex,u.address
+      from USER u,account a
+      where u.id = a.uid
+    </select>
+    <resultMap id="result1" type="user">
+        <result property="id" column="id1"></result>
+        <result property="username" column="username"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="sex" column="sex"></result>
+        <result property="address" column="address"></result>
+        <collection property="accounts" ofType="account">
+            <result property="id" column="id"></result>
+            <result property="uid" column="uid"></result>
+            <result property="money" column="money"></result>
+        </collection>
+    </resultMap>
+
 </mapper>
