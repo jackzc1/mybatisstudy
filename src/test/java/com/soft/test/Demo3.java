@@ -83,4 +83,13 @@ public class Demo3 {
             System.out.println(user);
         }
     }
+
+
+    @Test
+    public void test5() {
+        List<User> list = userDao.findManyToMany();
+        for (User user : list) {
+            System.out.println(user);
+        }
+    }
 }

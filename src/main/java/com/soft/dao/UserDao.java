@@ -31,4 +31,7 @@ public interface UserDao {
 
     //一对多关联查询
     public List<User> findAlls();
+
+    //多对多查询
+    public List<User> findManyToMany();
 }

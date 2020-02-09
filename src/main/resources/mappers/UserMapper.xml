@@ -76,4 +76,22 @@
         </collection>
     </resultMap>
 
+    <select id="findManyToMany" resultMap="result2">
+        SELECT u.id id1,u.username,u.birthday,u.sex,u.address,r.*
+        from user u,user_role ur,role r
+        where u.id=ur.uid and ur.rid=r.id
+    </select>
+
+    <resultMap id="result2" type="user">
+        <result property="id" column="id1"></result>
+        <result property="username" column="username"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="sex" column="sex"></result>
+        <result property="address" column="address"></result>
+        <collection property="roles" ofType="role">
+            <result property="id" column="id"></result>
+            <result property="roleName" column="role_name"></result>
+            <result property="roleDesc" column="role_desc"></result>
+        </collection>
+    </resultMap>
 </mapper>
