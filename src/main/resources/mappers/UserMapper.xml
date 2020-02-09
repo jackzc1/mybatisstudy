@@ -4,6 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.soft.dao.UserDao">
 
+    <cache/>
+
     <sql id="sql1">
         SELECT * from USER
     </sql>
@@ -106,4 +108,9 @@
         <result property="address" column="address"></result>
         <collection property="accounts" column="id"  select="com.soft.dao.AccountDao.findByUid" fetchType="lazy"></collection>
     </resultMap>
+
+
+    <select id="findById1" parameterType="int" resultType="user" useCache="true">
+        select * from USER where id = #{id};
+    </select>
 </mapper>

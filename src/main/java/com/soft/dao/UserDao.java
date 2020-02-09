@@ -37,4 +37,7 @@ public interface UserDao {
 
     //一对多延迟加载
     public List<User> findAll1();
+
+    //根据id查询测试2及缓存使用
+    public User findById1(Integer id);
 }

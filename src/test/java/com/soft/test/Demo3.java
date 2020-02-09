@@ -102,4 +102,18 @@ public class Demo3 {
             System.out.println("+++++++++++++++++++");
         }
     }
+
+    /**
+     * 测试2机缓存
+     */
+    @Test
+    public void test7() {
+        User byId1 = userDao.findById1(1);
+        System.out.println(byId1);
+        sqlSession.close();
+        sqlSession = sqlSessionFactory.openSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User byId11 = mapper.findById1(1);
+        System.out.println(byId11);
+    }
 }
