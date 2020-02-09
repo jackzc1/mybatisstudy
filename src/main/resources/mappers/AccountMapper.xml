@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soft.dao.AccountDao">
+
+    <sql id="sql1">
+        SELECT * from account
+    </sql>
+
+    <select id="findAll" resultMap="result1">
+        SELECT a.id id1,a.uid,a.money,u.* from user u, account a where u.id = a.uid
+    </select>
+
+    <resultMap id="result1" type="account">
+        <result property="id" column="id1"></result>
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+        <association property="user" javaType="user">
+            <result property="id" column="id"></result>
+            <result property="username" column="username"></result>
+            <result property="birthday" column="birthday"></result>
+            <result property="sex" column="sex"></result>
+            <result property="address" column="address"></result>
+        </association>
+    </resultMap>
+</mapper>
