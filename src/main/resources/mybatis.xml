@@ -30,5 +30,7 @@
     <mappers>
         <mapper resource="mappers/UserMapper.xml"></mapper>
         <mapper resource="mappers/AccountMapper.xml"></mapper>
+        <mapper class="com.soft.dao.UserDao1"></mapper>
+        <mapper class="com.soft.dao.AccountDao1"></mapper>
     </mappers>
 </configuration>
