@@ -20,4 +20,6 @@ public interface UserDao {
     //模糊查询
     public List<User> findByName(String name);
 
+    //根据username和sex查询
+    public List<User> findByUsernameAdnSex(User user);
 }
