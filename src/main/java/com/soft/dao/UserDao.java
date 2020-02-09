@@ -34,4 +34,7 @@ public interface UserDao {
 
     //多对多查询
     public List<User> findManyToMany();
+
+    //一对多延迟加载
+    public List<User> findAll1();
 }

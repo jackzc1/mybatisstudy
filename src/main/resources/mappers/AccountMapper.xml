@@ -24,4 +24,8 @@
             <result property="address" column="address"></result>
         </association>
     </resultMap>
+
+    <select id="findByUid" parameterType="int" resultType="account">
+        SELECT * from account where uid = #{uid}
+    </select>
 </mapper>

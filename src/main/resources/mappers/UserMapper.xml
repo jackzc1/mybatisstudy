@@ -94,4 +94,16 @@
             <result property="roleDesc" column="role_desc"></result>
         </collection>
     </resultMap>
+
+    <select id="findAll1" resultMap="result3">
+        SELECT * from user
+    </select>
+    <resultMap id="result3" type="user">
+        <result property="id" column="id"></result>
+        <result property="username" column="username"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="sex" column="sex"></result>
+        <result property="address" column="address"></result>
+        <collection property="accounts" column="id"  select="com.soft.dao.AccountDao.findByUid" fetchType="lazy"></collection>
+    </resultMap>
 </mapper>

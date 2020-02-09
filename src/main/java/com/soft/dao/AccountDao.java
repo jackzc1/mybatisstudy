@@ -11,4 +11,6 @@ public interface AccountDao {
 
     public List<Account> findAll();
 
+    //根据uid查
+    public List<Account> findByUid(int uid);
 }
